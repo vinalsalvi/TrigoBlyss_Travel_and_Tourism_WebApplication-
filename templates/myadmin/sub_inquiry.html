@@ -1,0 +1,49 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Inquiry Details</h4>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                     
+                      <tbody>
+                          
+                         
+                               <tr>
+                                <th>Inquiry Id</th>
+                                <td>{{result.id}}</td>
+                              </tr>
+                               <tr> 
+                                <th>Inquiry Name</th>
+                                <td>{{result.name}}</td>
+                              </tr>
+                               <tr>
+                                <th>Email</th>
+                                <td>{{result.email}}</td>
+                              </tr>
+                               <tr> 
+                                <th>Contact</th>
+                                <td>{{result.contact}}</td>
+                              </tr>
+                              <tr>
+                                <th>Date</th>
+                                <td>{{result.date}}</td>
+                              </tr>
+                                <tr>
+                                  <th>Message</th>
+                                  <td>{{result.message}}</td>
+                                </tr>
+                           
+
+                            
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+{% endblock %}

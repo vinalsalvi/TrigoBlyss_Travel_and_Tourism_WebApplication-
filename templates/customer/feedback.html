@@ -1,0 +1,116 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Page</title>
+  <!-- Bootstrap CSS -->
+  
+  <style>
+    /* Custom CSS */
+   
+    body {
+      background-color: #f8f9fa;
+    }
+    .feedback-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+ <section class="w3l-inner-banner-main">
+        <div class="banner-9 sec-img">
+            <div class="wrapper">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/customer/homepage">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <!-- <li><a href="#pages">Pages <span class="fa fa-angle-right" aria-hidden="true"></span></a></li> -->
+                    <li class="active">Feedback</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {% if messages %}
+                {% for i in messages %}
+                <script>alert("{{ i }}");</script>
+                {% endfor %}
+    {% endif %}
+    <!-- //covers -->
+    <!-- form 34 -->
+    <section class="w3l-form-34-main">
+        <div class="form34-sub">
+            <div class="form34">
+                <h4 class="form-head">Feedback</h4>
+                <p class="form-para">We all need people who will give us feedback. That’s how we improve.</p>
+                <!-- <div class="main-div">
+                    <a href="#facebook">
+                        <div class="signin">
+                            <span class="fa fa-facebook-square" aria-hidden="true"></span>
+                            <p class="action">Facebook</p>
+                        </div>
+                    </a>
+                    <a href="#facebook1">
+                        <div class="signin">
+                            <span class="fa fa-google-plus-square" aria-hidden="true"></span>
+                            <p class="action">Google</p>
+                        </div>
+                    </a>
+                </div> -->
+                <!-- <div class="form-34or">or</div> -->
+                 
+                     
+                <hr style="opacity: 0.60;"><br>
+                <form action="/customer/store2" method="post">
+                    {% csrf_token %}
+                    <!-- <div class=""> -->
+
+                        <div>
+                            <label class="text-head" >Rating <span class="compulsary"></span></label>
+                            <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
+
+                            <input id="input-1" id="rating" name="rating" class="rating rating-loading" data-min="0" data-max="5" data-step="1">
+
+
+                        </div>
+
+                        <!-- <p class="text-head">Rating</p>
+                        <select class="form-control" id="rating" name="rating" style=" border: 1px solid #D2D2D2;width: 100%;font-size: 16px;background-color: #F0F0F0;border: none;padding: 10px;outline: none;color: #555A64; margin-bottom: 1rem; min-height: 50px;" required>
+                                    <option value="" selected>Select Your Rating</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                            </select> -->
+                        
+
+                    <div class="">
+                        <p class="text-head">Message</p>
+                        <textarea class="input" name="comment" id="comment" placeholder="Your Message" style="outline: none;padding: 10px;border: 1px solid #D2D2D2;width: 100%;font-size: 16px; background-color:#F0F0F0;color: #555A64; margin-bottom: 1rem; min-height: 150px;" required></textarea>
+                    </div>
+
+                    
+                    <button type="submit" class="buttonbg signinbutton"><a href="/customer/feedback" style="color: white;text-decoration: none;">Send Message</a></button>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

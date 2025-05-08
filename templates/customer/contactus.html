@@ -1,0 +1,58 @@
+
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+<section class="w3l-inner-banner-main">
+        <div class="banner-9">
+            <div class="wrapper">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/customer/homepage">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <!-- <li><a href="#pages"> <span class="fa fa-angle-right" aria-hidden="true"></span></a></li> -->
+                    <li class="active">Contact</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //covers -->
+    <section class="w3l-contact-hny-6"><br>
+        <!-- contact -->
+        <div class="contact-section">
+            <div class="map-fo">
+                <!-- <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27404345275!2d-118.69191921441556!3d34.02016130939095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1522474296007"
+                    allowfullscreen=""></iframe> -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773484.55170563!2d61.02451656116589!3d19.69009515037612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1711649705351!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="resp-cont">
+                    <form action="/customer/store1" method="post" class="contact-form">
+                        {% csrf_token %} 
+                        <h5>Contacts</h5>
+                        <p>We want to hear from you</p>
+                        <input type="text" placeholder="Name" name="name" id="name" pattern="[a-zA-Z\s]+" required>
+                        <input type="email" name="email" placeholder="Email" id="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                         <input type="tel" name="contact" placeholder="Contact" id="contact" pattern="[789][0-9]{9}"
+                            required>
+                        <textarea placeholder="Message" name="message" id="message" min="10" max="100" required></textarea>
+                        <button type="submit" class="btn buttonbg">Send Now</button>
+                    </form>
+                </div>
+            </div>
+            <div class="contact-info-ad">
+                <div class="wrapper">
+                    <div class="grid">
+                        <div class="adress-lavi-info">
+                            <h3>Visit Us</h3>
+                            <p><a href="/customer/homepage">TrigoBlyss</a>
+                                <!-- <br>Addison Township, 2nd floor, <br>California, USA. </p> -->
+                        </div>
+                        <div class="adress-lavi-info">
+                            <h3>Contact Us</h3>
+                            <p><a href="tel:+1-800-999-800">+91 81287-44264</a></p>
+                            <!-- <p><a href="tel:+7-800-999-800">+7-800-999-800</a></p> -->
+                            <!-- <p><a href="https://p.w3layouts.com/cdn-cgi/l/email-protection#b0d9ded6dff0d5c8d1ddc0dcd59ed3dfdd" class="mail"><span class="__cf_email__" data-cfemail="224f434b4e62475a434f524e470c414d4f">[email&#160;protected]</span></a></p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        {% endblock %}

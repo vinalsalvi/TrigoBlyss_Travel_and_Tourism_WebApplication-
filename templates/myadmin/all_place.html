@@ -1,0 +1,55 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Places</h4>
+                  <p class="card-description">
+                    All Places </p>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Place_id</th>
+                          <th>Place_name</th>
+                          <th>Image</th>
+                          <th>View Details</th>
+                         <!--  <th>City_id</th>
+                          <th>Area_id</th>
+                          <th>Address</th> -->
+                          <!-- <th>Description</th>
+                          <th>Update</th>
+                          <th>Delete<th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                         {% for row in result %}
+                          <tr>
+                              <td>{{row.id}}</td>
+                              <td>{{row.place_name}}</td>
+                              <td><img src="/media/upload/{{row.Image}}" class="img-fluid d-block" style="height: 100px; width: 100px;"></td>
+                              <td><a href="/myadmin/place/{{row.id}}">View Details</td>
+                              <!-- <td>{{row.city_id}}</td>
+                                <td>{{row.addesss}}</td>
+                              <td>{{row.area_id}}</td> -->
+                              <!-- <td>{{row.description}}</td> -->
+                              <!-- <td><a href="/myadmin/update/{{row.id}}">Update</a></td>
+                             <td><a href="/myadmin/delete/{{row.id}}">Delete</a></td> -->
+                               
+                               
+                            </tr>
+                        {% endfor %}
+
+                      
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+{% endblock %}

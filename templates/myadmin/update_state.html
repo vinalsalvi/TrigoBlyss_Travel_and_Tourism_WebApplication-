@@ -1,0 +1,25 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+            <div class="col-md-10 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Update State Details</h4><br>
+                  <!-- <p class="card-description">
+                    Add new categories </p><br> -->
+                  
+                  <form class="forms-sample" method="post" action="/myadmin/edit5/{{result.id}}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">State Name </label>
+                      <input type="text" name="state_name" value="{{result.state_name}}" class="form-control" id="state_name" placeholder="Add State">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- <section class="w3l-inner-banner-main"> -->
+        <div class="banner-9 sec-img">
+            <div class="wrapper">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/customer/homepage">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li><a href="/customer/packages">Places <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li class="active">Place Detail</li>
+                </ul>
+            </div>
+        </div>
+    <!-- </section> -->
+    
+
+
+<section class="w3l-grids-6">
+        <!-- grids -->
+        <div class="grids-layout">
+            <div class="wrapper">
+                <h3 class="title-main">Book Your Dream Vacation </h3>
+                <p class="sub-title" style="margin-bottom:80px">Planning a dream vacation can be a daunting task, but it doesn't have to be. With our all-inclusive tour packages , so you can relax and enjoy your trip.</p>
+                <div class="d-grid grid-column-3">
+                    {% for p in plans%}
+                        <div class="gd-innf">
+                            <a href="/customer/packagedetail/{{p.id}}"><img class="img-responsive" height="250" width="350" src="/media/upload/{{p.image}}" alt="image"></a>
+                            <h3><a href="/customer/packagedetail/{{p.id}}" class="vv-link">{{p.plan_name}}</a></h3>
+                        </div>
+                   
+                    {% endfor %}
+                   
+
+                </div>
+                    
+            </div>
+        </div>
+        <!-- //grids -->
+    </section>
+    {% endblock %}

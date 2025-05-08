@@ -1,0 +1,112 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+            <div class="col-md-10 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Update Plan Details</h4><br>
+                  <!-- <p class="card-description">
+                    Add new plan
+                  </p> -->
+                  <form class="forms-sample" method="post" action="/myadmin/edit4/{{result.id}}" enctype="multipart/form-data">
+                      {% csrf_token %}
+                     <div class="form-group">
+                      <label for="exampleInputUsername1">Plan Name</label>
+                      <input type="text" class="form-control" name="plan_name" value="{{result.plan_name}}" id="plan_name" placeholder="Add Name">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Hotel Image</label><br>
+                      <img src="/media/upload/{{result.image}}" class="mb-3" height="80" width="100">
+                      <input type="file" name="img[]" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="file" name="image" id="image" class="form-control file-upload-info" placeholder="Upload Image">
+                        <!-- <span class="input-group-append">
+                          <input type="submit" class="file-upload-browse btn btn-primary"  name="submit" id="submit" value="Upload"/>
+                        </span> -->
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleSelectGender">Category</label>
+                        <select class="form-control" name="category_id" id="category_id">
+                          <option>Select Category  </option>
+                          {% for row in category %}
+                              <option value="{{row.id}}" {% if result.category_id == row.id %} selected {% endif %}>{{row.category_name}}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+
+                     <div class="form-group">
+                      <label for="exampleInputUsername1">Price</label>
+                      <input type="text" class="form-control" name="price" value="{{result.price}}" id="price" placeholder="Add price">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Departure Date</label>
+                      <input type="date" class="form-control" required id="ddate" name="ddate" value="{{result.ddate}}" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">To Date</label>
+                      <input type="date" class="form-control" required id="tdate" name="tdate" value="{{result.tdate}}" placeholder="">
+                    </div>
+
+                    <!-- <div class="form-group">
+                      <label for="exampleSelectGender">Place</label>
+                        <select class="form-control" name="place_id" id="place_id">
+                          <option>Select Hotel  </option>
+                          {% for row in place %}
+                              <option value="{{row.id}}" {% if result.place_id == row.id %} selected {% endif %}>{{row.place_name}}</option>
+                          {% endfor %}
+                        </select>
+                    </div> -->
+
+
+                    <div class="form-group">
+                      <label for="exampleSelectGender">Hotel</label>
+                        <select class="form-control" name="hotel_id" id="hotel_id">
+                          <option>Select Hotel  </option>
+                          {% for row in hotel %}
+                              <option value="{{row.id}}" {% if result.hotel_id == row.id %} selected {% endif %}>{{row.hotel_name}}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="exampleSelectGender">Travel</label>
+                        <select class="form-control" name="travel_id" id="travel_id">
+                          <option>Select Travel  </option>
+                          {% for row in travel %}
+                              <option value="{{row.id}}" {% if result.travel_id == row.id %} selected {% endif %}>{{row.travel_name}}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control" id="description" name="description" rows="4">
+                        {{result.description}}
+                      </textarea>
+                    </div>
+                    
+
+                    <button type="submit" class="btn btn-primary mr-2" value="Update">Update</button>
+                    <button class="btn btn-light" value="cancel">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    var today = new Date().toISOString().split('T')[0];
+    $("#ddate").attr('min', today);
+
+    var today1 = new Date().toISOString().split('T')[0];
+    $("#tdate").attr('min', today1);
+});
+  </script>
+{% endblock %}

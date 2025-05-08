@@ -1,0 +1,97 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+            <div class="col-md-10 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Update Hotel Details</h4><br>
+                 <!--  <p class="card-description">
+                    Update
+                  </p> -->
+                  <form class="forms-sample" method="post" action="/myadmin/edit1/{{result.id}}" enctype="multipart/form-data">
+                      {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Hotel Name</label>
+                      <input type="text" class="form-control" name="hotel_name" id="hotel_name" value="{{result.hotel_name}}" placeholder="Hotel name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Email</label>
+                      <input type="email" class="form-control" name="email" id="email" value="{{result.email}}" placeholder="Add Email">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Contact</label>
+                      <input type="tel" class="form-control" name="contact" value="{{result.contact}}" id="contact" placeholder="Contact">
+                    </div>
+
+
+                    <div class="form-group">
+                      <label>Hotel Image</label><br>
+                      <img src="/media/upload/{{result.image}}" class="mb-3" height="80" width="100">
+                      <!-- <input type="file" name="img[]" class="file-upload-default"> -->
+                      <div class="input-group col-xs-12">
+                        <input type="file" name="image" id="image" class="form-control file-upload-info" placeholder="Upload Image" multiple>
+                        <!-- <span class="input-group-append">
+                          <input type="submit" class="file-upload-browse btn btn-primary"  name="submit" id="submit" value="Upload"/>
+                        </span> -->
+                      </div>
+                    </div>
+
+                  <div class="form-group">
+                      <label for="exampleTextarea1">Address</label>
+                      <textarea class="form-control" name="address" id="address" rows="4">
+                        {{result.address}}
+                      </textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleSelectGender">State</label>
+                        <select class="form-control" name="state_id" id="state_id">
+                          <option>Select State</option>
+                          {% for row in state %}
+                              <option value="{{row.id}}" {% if result.state_id == row.id %} selected {% endif %} >{{row.state_name}}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleSelectGender">City</label>
+                        <select class="form-control" name="city_id" id="city_id">
+                          <option>Select City ID </option>
+                          {% for row in city %}
+                              <option value="{{row.id}}" {% if result.city_id == row.id %} selected {% endif %} >{{row.city_name}}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleSelectGender">Area</label>
+                        <select class="form-control" name="area_id" id="area_id">
+                          <option>Select Area ID </option>
+                          {% for row in area %}
+                              <option value="{{row.id}}" {% if result.area_id == row.id %} selected {% endif %} >{{row.area_name}}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control" name="description" id="description" rows="4">
+                        {{result.description}}
+                      </textarea>
+                    </div>
+
+                    <!-- <div class="form-group">
+                      <label for="exampleInputUsername1">Register Date</label>
+                      <input type="date" class="form-control" name="rdate" id="exampleInputUsername1" placeholder="Contact">
+                    </div>
+                     -->
+                    <button type="submit" class="btn btn-primary mr-2" value="submit">Update</button>
+                    <button class="btn btn-light" value="cancel">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

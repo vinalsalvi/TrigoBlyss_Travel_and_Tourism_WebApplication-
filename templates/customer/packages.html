@@ -1,0 +1,141 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- <section class="w3l-inner-banner-main"> -->
+        <!-- <div class="banner-9 sec-img"> -->
+            <!-- <div class="wrapper"> -->
+                <!-- <ul class="breadcrumbs-custom-path"> -->
+                    <li><a href="/customer/homepage">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li><a href="/customer/packages">Plan <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <!-- <li class="active">Packages</li> -->
+                <!-- </ul> -->
+            <!-- </div> -->
+        <!-- </div> -->
+<!-- </section> -->
+    
+
+ <section class="w3l-grids-6" style="margin-top:50px">
+        <!-- grids -->
+        <div class="grids-layout">
+            <div class="wrapper">
+                <h3 class="title-main">Discover The Experience</h3>
+                <p class="sub-title">Traveling has been a wonderful opportunity to explore new places, try new foods and meet new people.</p>
+                <div class="d-grid grid-column-3">
+                    <!-- {% for p in plans %}
+                        <div class="gd-innf">
+                            <a href="/customer/packagedetail/{{p.id}}"><img class="img-responsive" src="/media/upload/{{p.image}}" alt="image"></a>
+                            <h3><a href="/customer/packagedetail/{{p.id}}" class="vv-link">{{p.plan_name}}</a></h3>
+                        </div>
+                   
+                    {% endfor %} -->
+                    <!-- <div class="gd-innf">
+                        <a href="single.html"><img class="img-responsive" src="{% static 'customer/assets/images/grid1.jpg' %}" alt="image"></a>
+                        <h3><a href="single.html" class="vv-link">Paris</a></h3>
+                    </div>
+                    <div class="gd-innf">
+                        <a href="single.html"><img class="img-responsive" src="{% static 'customer/assets/images/grid2.jpg' %}" alt="image"></a>
+                        <h3><a href="single.html" class="vv-link">Thailand</a></h3>
+                    </div>
+                    <div class="gd-innf">
+                        <a href="single.html"><img class="img-responsive" src="{% static 'customer/assets/images/grid3.jpg' %}" alt="image"></a>
+                        <h3><a href="single.html" class="vv-link">Greece</a></h3>
+                    </div> -->
+                </div>
+                
+            </div>
+        </div>
+        <!-- //grids -->
+    </section>
+
+     {% for p in plans %}
+    <section class="w3l-features-photo-7" style="margin-top:-50px;">
+        <div class="w3l-features-photo-7_sur">
+            <div class="wrapper">
+               
+                <div class="w3l-features-photo-7_top">
+                    <div class="w3l-features-photo-7_top-right">
+                        <div class="galleryContainer">
+                            <a href="/customer/packagedetail/{{p.id}}">
+                            <div class="gallery" style="border:none; width: 450px;">
+                                <input type="checkbox" name="controls" id="c1" checked><img class="galleryImage" id="i1" src="/media/upload/{{p.image}}" class="" style="border-radius: 4px; width: 440px; height: 500px; " alt="">
+                                
+                            </div>
+                        </a>
+                            
+                        </div>
+                    </div>
+                    <div class="w3l-features-photo-7_top-left" style="margin-left:-35px">
+                        <a href="/customer/packagedetail/{{p.id}}"><h4>{{p.plan_name}}</h4></a>
+                        <ul class="star" >
+                            <li><span class="fa fa-star" aria-hidden="true"></span></li>
+                            <li><span class="fa fa-star" aria-hidden="true"></span></li>
+                            <li><span class="fa fa-star" aria-hidden="true"></span></li>
+                            <li><span class="fa fa-star" aria-hidden="true"></span></li>
+                            <li><span class="fa fa-star-o" aria-hidden="true"></span></li>
+                        </ul>
+                        <p class="coasts">
+                            <span class="item_price"><i class="fa-solid fa-indian-rupee-sign fa-sm " style="margin-right:3px"></i>{{p.price}}</span>
+                            <del class="mx-2 font-weight-light"><i class="fa-solid fa-indian-rupee-sign fa-sm " style="margin-right:3px ; margin-left: 10px;"></i>50000.0</del>
+                            <label>per adult</label>
+                        </p>
+                        <p style="margin-top:20px ; font-size:18px;color: #f05448;font-weight: bold; ">
+                            {{p.ddate}}<i class="fa-solid fa-arrow-right fa-sm" style="color:#f05448;margin-right: 10px; margin-left: 10px ; margin-bottom: 23px"></i>{{p.tdate}} . 1 Room
+                        </p>
+                        <p class="para">{{p.description}}</p>
+                        <p><i class="fa-solid fa-clock-rotate-left" style=" color: #f05333; margin-right: 10px;"></i>Free cancellation <i class="fa-solid fa-circle-exclamation" style="margin-left:4px"></i></p>
+                        <p><i class="fa-solid fa-check" style="color: #f05448; margin-right: 10px;"></i>Recommended by 98% of travelers <i class="fa-solid fa-circle-exclamation" style="margin-left:4px"></i></p>
+                        <!-- <div class="sec-grid-1">
+                            <label>Size:</label>
+                            <select name="carlist" form="carform">
+                                <option value="volvo">22</option>
+                                <option value="saab">26</option>
+                                <option value="opel">30</option>
+                            </select>
+                        </div> -->
+                       <!--  <div class="sec-grid-1">
+                            <label>Color:</label>
+                            <select name="carlist" form="carform">
+                                <option value="volvo">Black</option>
+                                <option value="saab">Blue</option>
+                                <option value="opel">Red</option>
+                                <option value="opel">Silver</option>
+                            </select>
+                        </div> -->
+                        <!-- <div class="sec-grid-1">
+                            <label>Quantity:</label>
+                            <div class="disply-cont">
+                                <input type="number" value="1" min="1">
+                            </div>
+                        </div> -->
+                        <div class="inline-cont">
+                            <a href="/customer/packagedetail/{{p.id}}" class="buttonbg">Reserve Now</a>
+                            <!-- <div class="buttons-teams">
+                                <ul>
+                                    <li>
+                                        <p>Share:</p>
+                                    </li>
+                                    <li>
+                                        <a href="#team"><span class="fa fa-facebook-square"
+                                                aria-hidden="true"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#team"><span class="fa fa-twitter-square"
+                                                aria-hidden="true"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#team"><span class="fa fa-google-plus-square"
+                                                aria-hidden="true"></span></a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+    {% endblock %}

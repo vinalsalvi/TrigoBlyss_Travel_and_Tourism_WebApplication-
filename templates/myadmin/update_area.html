@@ -1,0 +1,35 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+            <div class="col-md-10 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Update Area Details</h4><br>
+                  <!-- <p class="card-description">
+                    Add new categories </p><br> -->
+                  
+                  <form class="forms-sample" method="post" action="/myadmin/edit7/{{result.id}}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Area Name </label>
+                      <input type="text" name="area_name" value="{{result.area_name}}" class="form-control" id="area_name" placeholder="Add Area">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleSelectGender">City name</label>
+                        <select class="form-control" id="city_id" name="city_id">
+                          <option>Select City</option>
+                          {% for row in city %}
+                            <option value="{{row.id}}" {% if result.city_id == row.id %} selected {% endif %}>{{row.city_name}}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

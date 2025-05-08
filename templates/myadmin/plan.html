@@ -1,0 +1,78 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Plan Details</h4>
+                  
+                  
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      
+                      <tbody>
+
+                        <tr>
+                          <th>Plan Id</th>
+                          <td>{{result.id}}</td>
+                        </tr>
+                        <tr>
+                          <th>Image</th>
+                          <td>
+                            <img src="/media/upload/{{result.image}}" class="img-fluid d-block" style="height: 140px; width: 200px;" ></td>
+                        </tr>
+                        <tr>
+                          <tr>
+                            <th>Place Name</th>
+                            <td>{{result.plan_name}}</td>
+                          </tr>
+                          <tr>
+                            <th>Departure Date</th>
+                            <td>{{result.ddate}}</td>
+                          </tr>
+                          <tr>
+                            <th>To Date</th>
+                            <td>{{result.tdate}}</td>
+                          </tr>
+                          <tr>
+                            <th>Price</th>
+                            <td>{{result.price}}</td>
+                          </tr>
+                          
+                          <th>Category</th>
+                          <td>{{result.category}}</td>
+                        </tr>
+                      
+                        <tr>
+                          <th>Hotel</th>
+                          <td>{{result.hotel}}</td>
+                        </tr>
+                        <tr>
+                          <th>Travel</th>
+                          <td>{{result.travel}}</td>
+                        </tr>
+                        <tr>
+                          <th>Description</th>
+                          <td>{{result.description}}</td>
+                        </tr>
+                        <tr>
+                          <th>Update</th>
+                          <td><a href="/myadmin/update4/{{result.id}}">Update</a></td>
+                        </tr>
+                        <tr> 
+                          <th>Delete</th> 
+                          <td><a href="/myadmin/delete4/{{result.id}}">Delete</a></td>
+                        </tr>
+                        <tr>
+                          <th>Add Places</th>
+                          <td><a href="/myadmin/add_plans_places/{{result.id}}">Add Places</a></td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+{% endblock %}

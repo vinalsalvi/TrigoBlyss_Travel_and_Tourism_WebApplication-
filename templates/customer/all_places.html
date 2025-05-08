@@ -1,0 +1,48 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- <section class="w3l-inner-banner-main"> -->
+        <div class="banner-9 sec-img">
+            <div class="wrapper">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/customer/homepage">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li><a href="/customer/packages">Places <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li class="active">Place Detail</li>
+                </ul>
+            </div>
+        </div>
+    <!-- </section> -->
+    
+
+
+<section class="w3l-products-1">
+        <div class="products1">
+            <div class="wrapper">
+                <h3 class="title-main">Places to Visit </h3>
+                <p class="sub-title">Here you can find a list of all the amazing places we offer tours to. Whether you're looking for a relaxing beach vacation, an adventurous mountain getaway, or a cultural city break, we have something for everyone.</p>
+                <div class="products1-content">
+                    {% for p in places %}
+                        <div class="column" style="margin-bottom:60px">
+                            <a href="/customer/placedetail/{{p.id}}"><img src="/media/upload/{{p.Image}}" alt=""
+                                    class="img-responsive img-fluid" height="200px" /></a>
+                            <h4><a href="/customer/placedetail/{{p.id}}">{{p.place_name}}</a></h4>
+                            <p>Starting at <i class="fa-solid fa-indian-rupee-sign fa-sm " style="margin-right:3px; margin-left: 5px;"></i>5000.0</p>
+                            <ul class="star">
+                                <li><span class="fa fa-star" aria-hidden="true"></span></li>
+                                <li><span class="fa fa-star" aria-hidden="true"></span></li>
+                                <li><span class="fa fa-star" aria-hidden="true"></span></li>
+                                <li><span class="fa fa-star" aria-hidden="true"></span></li>
+                                <li><span class="fa fa-star-o" aria-hidden="true"></span></li>
+                                <span>4.0(76)</span>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    {% endblock %}

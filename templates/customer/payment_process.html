@@ -1,0 +1,184 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <style type="text/css">
+        .razorpay-payment-button{
+            margin-left: 800px;
+              border: 0;
+              margin-top: -100px;
+              padding: 12px 25px;
+              background-color: #2c3038;
+              color: #fff;
+              font-size: 18px;
+              margin-bottom: 50px;
+        }
+
+        .razorpay-payment-button:hover {
+  background-color: #000;
+}
+    </style>
+</head>
+
+<section class="w3l-inner-banner-main">
+        <div class="banner-9 sec-img">
+            <div class="wrapper">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li><a href="#pages">Pages <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li class="active">Gallery</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //covers -->
+    
+
+
+          <!-- payment process -->
+
+
+<section class="w3l-ecom-cart">
+        <div class="covers-main">
+            <div class="wrapper">
+                <h1 style="font-size: 35px;">Payment - Details</h1>
+                <div class="shopping-cart" style="margin-left: 0px;">
+                    <div class="product">
+                        
+                        <div class="product-details">
+                            <div class="product-title"><a>Plan name</a></div>
+                           
+                        </div>
+                       <div class="product-title" style="margin-left:200px"><a>{{plan.plan_name}}</a></div>
+                        
+                    </div>
+                    <div class="product">
+                        
+                        <div class="product-details">
+                            <div class="product-title"><a>User Name</a></div>
+                           
+                        </div>
+                        <div class="product-title" style="margin-left:200px"><a >{{request.user.username}}</a></div>
+                        
+                    </div>
+                    <div class="product">
+                        
+                        <div class="product-details">
+                            <div class="product-title"><a>Booking Date</a>
+                            </div>
+                            
+                        </div>
+                        <div class="product-title" style="margin-left:200px"><a>{{booking.booking_date}}</a></div>
+                        
+                    </div>
+
+                    
+
+                    <div class="product">
+                        
+                        <div class="product-details">
+                            <div class="product-title"><a>Child</a></div>
+                        </div>
+                        <div class="product-title" style="margin-left:200px"><a>{{booking.child}}</a></div>
+                         
+                    </div>
+
+                    <div class="product">
+                        
+                        <div class="product-details">
+                            <div class="product-title"><a>Adult</a></div>
+                        </div>
+                        <div class="product-title" style="margin-left:200px"><a>{{booking.adult}}</a></div>
+                         
+                    </div>
+
+                    <div class="product">
+                        
+                        <div class="product-details">
+                            <div class="product-title"><a >Departure Date</a></div>
+                        </div>
+                        <div class="product-title" style="margin-left:200px"><a>{{plan.ddate}}</a></div>
+                         
+                    </div>
+
+                    <div class="product">
+                        
+                        <div class="product-details">
+                            <div class="product-title"><a>To Date</a></div>
+                        </div>
+                        <div class="product-title" style="margin-left:200px"><a>{{plan.tdate}}</a></div>
+                         
+                    </div>
+
+                    <div class="product">
+                        
+                        <div class="product-details">
+                            <div class="product-title"><a>Amount to be paid</a>
+                            </div>
+                        </div>
+                        <div class="product-title" style="margin-left:200px"><a><b style="margin-left:0px;"><i class="fa-solid fa-indian-rupee-sign fa-sm " style="margin-right:10px"></i>{{booking.amount}}</a></div>
+                        
+                    </div>
+                  
+                    <!-- <a href="login.html" class="checkout">Checkout</a> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- close script -->
+        <script>
+            var closebtns = document.getElementsByClassName("close");
+            var i;
+
+            for (i = 0; i < closebtns.length; i++) {
+                closebtns[i].addEventListener("click", function () {
+                    this.parentElement.style.display = 'none';
+                });
+            }
+        </script>
+
+
+
+
+
+
+        <form class="text-center border border-light p-5" action="/customer/success" method="POST">
+        {% csrf_token %}
+
+        <!-- RAZORPAY INTEGRATION HERE -->
+        <script src="https://checkout.razorpay.com/v1/checkout.js" 
+        data-key="rzp_test_PvM4GxK9MYlCUc" 
+        data-amount="{{payment.amount}}"
+        data-currency="INR" 
+        data-order_id="{{payment.id}}" 
+        data-buttontext="Pay with Razorpay"
+        data-name="TrigoBlyss"
+        data-description="Complete Traveling Solution"
+        data-image="https://oibp1.000webhostapp.com/logo.PNG" 
+        data-prefill.name="{{request.user.username}}"
+        data-prefill.email="{{request.user.email}}" 
+        data-theme.color="#F37254"></script></form>
+                    <!-- <a href="login.html" class="checkout" style="margin-right: 400px; margin-bottom: 30px;">Pay With Razorpay</a> -->
+                </div>
+            </form>
+        		</div>
+            </div>
+        </div>
+
+        <!-- close script -->
+        <script>
+            var closebtns = document.getElementsByClassName("close");
+            var i;
+
+            for (i = 0; i < closebtns.length; i++) {
+                closebtns[i].addEventListener("click", function () {
+                    this.parentElement.style.display = 'none';
+                });
+            }
+        </script>
+        <!-- //close script -->
+    </section>
+
+
+{% endblock %}

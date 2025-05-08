@@ -1,0 +1,69 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+            <div class="col-md-10 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Update Travel Details</h4><br>
+                  <!-- <p class="card-description">
+                    Add new travel
+                  </p> -->
+                  <form class="forms-sample" method="post" action="/myadmin/edit2/{{result.id}}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Travel Name</label>
+                      <input type="text" class="form-control" id="travel_name" name="travel_name" value="{{result.travel_name}}" placeholder="Add Travel Name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Contact</label>
+                      <input type="tel" class="form-control" id="contact" name="contact" value="{{result.contact}}" placeholder="Contact">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Travel Image</label><br>
+                      <img src="/media/upload/{{result.image}}" class="mb-3" height="80" width="100">
+                      <input type="file" name="img[]" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="file" name="image" id="image" class="form-control file-upload-info" placeholder="Upload Image">
+                        <!-- <span class="input-group-append">
+                          <input type="submit" class="file-upload-browse btn btn-primary"  name="submit" id="submit" value="Upload"/>
+                        </span> -->
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">No of seats</label>
+                      <input type="text" class="form-control" id="no_of_seats" name="no_of_seats" value="{{result.no_of_seats}}" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Luggage</label>
+                      <input type="text" class="form-control" id="luggage" name="luggage" value="{{result.luggage}}" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Pickup</label>
+                      <input type="text" class="form-control" id="pickup" name="pickup" value="{{result.pickup}}" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Drop</label>
+                      <input type="text" class="form-control" id="drop" name="drop" value="{{result.drop}}" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control" name="description" id="description" rows="4">
+                        {{result.description}}
+                      </textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2" value="submit">Update</button>
+                    <button class="btn btn-light" value="cancel">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

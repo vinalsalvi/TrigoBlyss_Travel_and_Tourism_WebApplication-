@@ -1,0 +1,64 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+<div id="banner-area">
+    <img src="{% static 'customer/images/banner/banner2.jpg' %}" alt ="" />
+    <div class="parallax-overlay"></div>
+      <!-- Subpage title start-->
+      <div class="banner-title-content">
+            <div class="text-center">
+              <h2>Forgot Password</h2>
+             
+              </div>
+            </div><!-- Subpage title end -->
+  </div>
+  <section id="main-container">
+  {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+    <div class="container">
+      
+     
+
+       <div class="gap-40"></div>
+     <div class="row">
+       <div style="background-color: red;">
+        <div class="col-md-6 col-md-offset-3">
+         
+          <h4>Hello! let's get started</h4>
+              <h6 class="font-weight-light">Enter Email in to continue.</h6>
+
+          <form action="/customer/forgot_password_check" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder=" Enter Email Id" autocomplete="off">
+            </div>
+             <div class="form-group">
+                 
+               <div class="mt-3">
+                  <input type="submit" value="Send Mail" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="">
+                </div>
+                 <div class="my-2 d-flex justify-content-between align-items-center">
+                  <div class="form-check">
+                    
+                  </div>
+                  
+                </div>
+               
+          </form>
+        </div>
+      </div>
+    
+  </div> 
+
+  {% endblock %}       
+
+
+ 
+
+  

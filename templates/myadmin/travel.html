@@ -1,0 +1,67 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Travel Details</h4>
+                  
+                  
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <tbody>
+                        
+                      <tr>
+                        <th>Travel Id</th>
+                        <td>{{result.id}}</td>
+                      </tr>
+                      <tr>
+                        <th>Travel Name</th>
+                        <td>{{result.travel_name}}</td>
+                      </tr>
+                      <tr>
+                        <th>Contact</th>
+                        <td>{{result.contact}}</td>
+                      </tr>
+                      <tr> 
+                        <th>Image</th> 
+                        <td><img src="/media/upload/{{result.image}}" class="img-fluid d-block" style="height: 140px; width: 200px;" ></td>
+                      </tr>
+                      <tr>  
+                        <th>No Seats</th>
+                        <td>{{result.no_of_seats}}</td>
+                      </tr>
+                      <tr>
+                        <th>Luggage</th>
+                        <td>{{result.luggage}}</td>
+                      </tr>
+                      <tr>
+                        <th>Pickup</th>
+                        <td>{{result.pickup}}</td>
+                      </tr>
+                      <tr>
+                        <th>Drop</th>
+                        <td>{{result.drop}}</td>
+                      </tr>
+                      <tr>
+                          <th>Description</th>
+                          <td>{{result.description}}</td>
+                        </tr>
+                      <tr>  
+                        <th>Update</th>
+                        <td><a href="/myadmin/update2/{{result.id}}">Update</a></td>
+                      </tr>
+                      <tr>
+                        <th>Delete</th>
+                        <td><a href="/myadmin/delete2/{{result.id}}">Delete</a></td>         
+                      </tr>
+
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+{% endblock %}

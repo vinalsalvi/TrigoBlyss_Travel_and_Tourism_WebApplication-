@@ -1,0 +1,37 @@
+{% extends 'myadmin/common/layout.html' %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="row">
+      <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Add Places In Plan</h4>
+            <form class="forms-sample" method="post" action="/myadmin/insert_plans_places" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-group">
+                <!-- <label for="exampleInputName1">Plan Name</label> -->
+                <input type="hidden" class="form-control" id="plan_name" name="plan_name" placeholder="Name" value="{{plan.id}}">
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="exampleInputName1">Places Name</label>
+                    <select class="form-control" id="place_name" name="place_name">
+                      <option value="" selected>Select Places Name</option>
+                      {% for row in plan_places %}
+                      <option value="{{row.id}}">{{row.place_name}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+               </div>
+              <button type="submit" class="btn btn-primary mr-2">Submit</button>
+              <button class="btn btn-light">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,302 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="w3l-inner-banner-main">
+        <div class="banner-9 sec-img">
+            <div class="wrapper">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/customer/homepage">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li><a href="/customer/packages">All Packages <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <li class="active">Packages Detail</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="w3l-galleries-19" style="background-color: white ; height: 700px;" >
+        <div class="gallery-19">
+            <div class="wrapper">
+                
+                <div class="gallery-main-9">
+                    <p class="text-tag"></p>
+                    <h3 class="gallery-text-19" style="margin-top: 30px;">Explore the beautiful places</h3>
+                </div>
+                 
+
+
+    <div class="div-3" id="div3">
+                <div class="slideshow-container" >
+
+             <!-- Full-width images with number and caption text -->
+             {% for p in place %}
+                  <div class="mySlides fade">
+                    
+                    <img src="/media/upload/{{p.place.Image}}"  class="screenshot" style="width:1200px ; height:450px;margin-right: 0px;" >
+                  </div>
+              {% endfor %}
+
+            </div>
+
+    </div>
+</div>
+
+
+    </div>
+</section>  
+
+<div class="div-4">
+            <ul>
+                
+                    <a href="#div1"><li class=""><i class="fa-solid fa-place-of-worship  " style=" margin-bottom: 10px;"></i><br>
+                    Stays (2)</li></a>
+                
+                    <a href="#div2"><li><i class="fa-solid fa-car-side" style=" margin-bottom: 10px;"></i><br>
+                    Transfers (2)</li></a>
+                
+                    <a href="#div3"><li><i class="fa-solid fa-map-location-dot" style=" margin-bottom: 10px;"></i><br>
+                    Places</li></a>
+                
+                    <a href="#div4"><li><i class="fa-solid fa-money-check" style=" margin-bottom: 10px;"></i><br>
+                    Booking</li></a>
+                
+            </ul>
+</div>
+                
+
+
+   
+
+
+<div class="main-div" style="background-color: #F8F8F8">  
+
+
+    <div class="div-1" >
+
+            <!-- hotel database -->
+            <section class="w3l-text-22" style="margin-right: 300px; border: 1px solid lightgray; height: 500px; margin-top: 10px; width: 800px; border-radius: 8px;box-shadow: 4px 5px 10px lightgray; " id="div1">
+                <div class="text" style="background-color: white;height: 500px;">
+                    <div class="wrapper" style="width: 800px; ">
+                            <div class="text-txt">
+                                <div style="margin-top: -20px;">
+                                    <h3 style="margin-top:-30px;">{{hotel.hotel_name}}  {{hotel.email}}</h3>
+                                    <p><i class="fa-solid fa-location-dot" style="margin-right:10px ; margin-left: 0px; color: black;"></i>{{hotel.address}}</p>
+                                </div>
+
+                                
+                                <div class="two-columns">
+                                    <div class="left-column" style=" margin-top: -20px;">
+                                        <img src="/media/upload/{{hotel.image}}" alt="" class="arrow-png image-fluid img-responsive" height="300px" width="500px" style="margin-top: 0px;">
+                                    </div>
+                                    <div class="right-column">
+                                        <p>ROOM DETAILS :</p><br>
+                                        <b><P style="margin-bottom: 15px;">{{hotel.description}}</P></b>
+                                        <p><i class="fa-solid fa-bed" style="margin-bottom:15px"></i> 1 Double Bed </p>
+                                        <p><i class="fa-solid fa-square-nfi ml-5 fa-sm" style="color: #df162a; margin-right: 8px;"></i>Non Refundable <i class="fa-solid fa-check" style="color: #53de17; margin-right: 8px;  margin-left: 15px;"></i>  Wifi <i class="fa-solid fa-check" style="color: #53de17;margin-right: 8px; margin-left: 15px;"></i> Elevator </p>
+                                        <p><i class="fa-solid fa-check" style="color: #53de17;margin-right: 8px;"></i> Breakfast <i class="fa-solid fa-check" style="color: #53de17; margin-right: 8px;margin-left: 15px;"></i> Air Conditioner</p><br><br>
+                                        <p><i class="fa-solid fa-star" style="color: #FFD43B; margin-left: 120px;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star-half" style="color: #FFD43B;"></i></p>
+                                        <p style="margin-left: 125px; font-size:13px">Star Category</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- hotel static -->
+            <section class="w3l-text-22" style="margin-right: 300px; border: 1px solid lightgray; height: 500px; margin-top: 100px; width: 800px; border-radius: 8px;box-shadow: 4px 5px 10px lightgray; " id="div1">
+                <div class="text" style="background-color: white; height: 500px;" >
+                    <div class="wrapper" style=" border:; width: 800px; ">
+                    
+                            <div class="text-txt">
+                                 <div style="margin-top: -20px;">
+                                    <h3 style="margin-top:-30px;">Royal Palm  @ ROYAL WAST GROUP...</h3>
+                                    <p><i class="fa-solid fa-location-dot" style="margin-right:10px ; margin-left: 0px; color: black;"></i>near from station  </p>
+                                </div>
+
+                                
+                                <div class="two-columns">
+                                    <div class="left-column" style=" margin-top: -20px;">
+                                        <img src="{% static 'customer/assets/images/hotel15.png' %}" alt="" class="arrow-png image-fluid img-responsive" height="300px" width="500px" style="margin-bottom: 0px;">
+                                    </div>
+                                   
+
+                                    <div class="right-column">
+                                        <p>ROOM DETAILS :</p><br>
+                                        <b><P style="margin-bottom: 15px;">Standard Twin Room</P></b>
+                                        <p><i class="fa-solid fa-bed" style="margin-bottom:15px"></i> 2 single Beds </p>
+                                        <p><i class="fa-solid fa-square-nfi ml-5 fa-sm" style="color: #df162a; margin-right: 8px;"></i>Non Refundable <i class="fa-solid fa-check" style="color: #53de17; margin-right: 8px;  margin-left: 15px;"></i>  Wifi <i class="fa-solid fa-check" style="color: #53de17;margin-right: 8px; margin-left: 15px;"></i> Elevator </p>
+                                        <p><i class="fa-solid fa-xmark" style="color: #ea210b;margin-right: 8px;"></i> Breakfast <i class="fa-solid fa-check" style="color: #53de17; margin-right: 8px;margin-left: 15px;"></i> Air Conditioner</p><br><br>
+                                        <p><i class="fa-solid fa-star" style="color: #FFD43B; margin-left: 120px;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star-half" style="color: #FFD43B;"></i></p>
+                                        <p style="margin-left: 125px; font-size:13px">Star Category</p>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- travel database -->
+            <section class="w3l-text-22" style="margin-right: 300px; border: 1px solid lightgray; height: 500px; margin-top: 100px; width: 800px; border-radius: 8px;box-shadow: 4px 5px 10px lightgray; background-color: white;" id="div2">
+                <div class="text">
+                    <div class="wrapper" style=" border:; width: 800px; ">
+                        
+                            <div class="text-txt">
+                                <h3> <i class="fa-solid fa-location-dot" style="margin-right:5px ; margin-left: 5px;"></i>{{travel.description}}</h3>
+
+                                
+                                <div class="two-columns">
+                                    <div class="left-column">
+                                        <img src="/media/upload/{{travel.image}}" alt="" class="arrow-png image-fluid img-responsive" height="340px" width="550px" style="margin-bottom: 0px;">
+                                    </div>
+                                    <div class="right-column" style="margin-left:80px">
+                                        <p>TRAVEL DETAILS :</p><br>
+                                        <b><P style="margin-bottom: 15px;"><i class="fa-solid fa-chair fa-1x" style="margin-right: 10px"></i>Private transfer</P></b>
+                                        <p><i class="fa fa-user-group" style="margin-bottom:10px ; margin-right: 10px"></i>{{travel.no_of_seats}}</p>
+                                        <p><i class="fa-solid fa-cart-flatbed-suitcase" style="margin-right: 8px;margin-bottom:10px"></i>{{travel.luggage}}</p>
+                                        <p> <i class="fa-solid fa-check" style="color: #53de17; margin-right: 8px ; margin-bottom:10px"></i> {{travel.pickup}}</p>
+                                        <p><i class="fa-solid fa-check" style="color: #53de17;margin-right: 8px; margin-bottom:20px"></i>{{travel.drop}}</p>
+
+                                        <!-- # *****  -->
+
+                                        <p><i class="fa-solid fa-star" style="color: #FFD43B; margin-left: 40px;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star-half" style="color: #FFD43B;"></i></p>
+                                        <p style="margin-left: 45px; font-size:13px">Star Category</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- travel static -->
+             <section class="w3l-text-22" style="margin-right: 300px; border: 1px solid lightgray; height: 500px; margin-top: 100px; width: 800px; border-radius: 8px;box-shadow: 4px 5px 10px lightgray; background-color: white;" id="div2">
+                <div class="text">
+                    <div class="wrapper" style=" border:; width: 800px; ">
+                        
+                            <div class="text-txt">
+                                <h3> <i class="fa-solid fa-location-dot" style="margin-right:5px ; margin-left: 5px;"></i>{{travel.description}}</h3>
+
+                                
+                                <div class="two-columns">
+                                    <div class="left-column">
+                                        <img src="{% static 'customer/assets/images/bus2.png' %}" alt="" class="arrow-png image-fluid img-responsive" height="340px" width="550px" style="margin-bottom: 0px; ">
+                                    </div>
+                                    <div class="right-column" style="margin-left:80px">
+                                        <p>TRAVEL DETAILS :</p><br>
+                                        <b><P style="margin-bottom: 15px;"><i class="fa-solid fa-chair fa-1x" style="margin-right: 10px"></i>Sharing transfer</P></b>
+                                        <p><i class="fa fa-user-group" style="margin-bottom:10px ; margin-right: 10px"></i>2 Passengers in 1 Vehicle</p>
+                                        <p><i class="fa-solid fa-cart-flatbed-suitcase" style="margin-right: 8px;margin-bottom:10px"></i>1 Luggages</p>
+                                        <p> <i class="fa-solid fa-check" style="color: #53de17; margin-right: 8px ; margin-bottom:10px"></i> {{travel.pickup}}</p>
+                                        <p><i class="fa-solid fa-check" style="color: #53de17;margin-right: 8px; margin-bottom:20px"></i>{{travel.drop}}</p>
+
+                                        <!-- # *****  -->
+
+                                        <p><i class="fa-solid fa-star" style="color: #FFD43B; margin-left: 40px;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star" style="color: #FFD43B;"></i><i class="fa-solid fa-star-half" style="color: #FFD43B;"></i></p>
+                                        <p style="margin-left: 45px; font-size:13px">Star Category</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+
+    </div>
+
+          <!-- booking stickey-->
+         <div class="div-2" id="div4" style=" border: none; background-color: white;">
+                    <div>
+                        <p style="margin-top:20px ; font-size:17px;color:  green; margin-left: 26px;">
+                            {{plan.ddate}}<i class="fa-solid fa-arrow-right fa-sm" style="color: green;margin-right: 10px; margin-left: 10px"></i>{{plan.tdate}} . <a href="/customer/date" style="color:blue;"><i class="fa-regular fa-pen-to-square"></i>Modify</a>
+                        </p>
+                        <div><hr style="opacity: 0.60;margin-top:10px; width: 100%;"></div>
+
+                        <p style="margin-top:10px ; font-size:24px; text-align:center; font-weight:500 ; color:  #2C3038;">
+                            {{plan.plan_name}}
+                        </p>
+                        <div><hr style="opacity: 0.60;margin-top:10px; width: 80%;"></div>
+
+                        <p style="margin-left:30px; margin-top:15px;">Price For Adult :  <b style="margin-left:40px;"><i class="fa-solid fa-indian-rupee-sign fa-sm " style="margin-right:10px"></i>{{plan.price}}</b></p>
+                        <p style="margin-left:30px;">(per person)</p>
+                        <p style="margin-left:30px; margin-top:10px;">Price For Child :  <b style="margin-left:40px;">Half of Adult Price.</b></p>
+                        <p style="margin-left:30px;">(above 5 Yrs)</p>
+
+                        <p style="margin-left:80px; margin-top:20px;"><b>Note : Below 5 yr Free !! </b></p>
+                    </div>
+
+                    <div><hr style="opacity: 0.60;margin-top:30px; width: 100%;"></div>
+
+               <div class="booking" style="background-color: white; height: 100px;padding-top: 30px;">
+                    
+                    <div style="display: flex; ">
+                        <div style="margin-top: -3px;margin-left: 15px">
+                            
+                            <h2><i class="fa-solid fa-indian-rupee-sign fa-sm " style="margin-right:2px"></i>{{plan.price}}</h2>
+                        </div>
+                     
+                                   {% if request.user.is_authenticated %} 
+                                    <div>
+                                        <a href="/customer/payment1/{{plan.id}}" class="actionbg" style="border: none;font-weight: 600;font-size: 17px;color: #F5F9FC;background: #2C3038;width: 200px; text-align: center;padding: 20px 30px 20px 30px;margin-left: 30px;margin-top: 10px;">Book this Trip</a>
+                                    </div>
+                                    {% else %}
+                                    <div>
+                                        <a href="/customer/register" class="actionbg" style="border: none;font-weight: 600;font-size: 17px;color: #F5F9FC;background: #2C3038;width: 200px; text-align: center;padding: 20px 30px 20px 30px;margin-left: 30px;margin-top: 10px;">Sign up now </a>
+
+                                    </div>
+                                    
+
+                                    {% endif %}
+
+                    </div>
+
+                    <hr style="opacity: 0.60;margin-top: 35px; width: 100%;">
+                                    <div style="margin-top: 16px;">
+                                    <p style="margin-left:30px">Total Payable Amount  <b style="margin-left:40px;"><i class="fa-solid fa-indian-rupee-sign fa-sm " style="margin-right:10px"></i>{{plan.price}}</b></p>               
+                </div>
+
+                
+
+
+        </div>
+
+       
+
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+
+
+document.getElementById('zoom-img').addEventListener('click', function() {
+    this.style.transform = (this.style.transform === 'scale(1.5)') ? 'scale(1)' : 'scale(1.5)'; /* Toggle between zoomed in and out */
+});
+</script>
+
+   
+{% endblock %}

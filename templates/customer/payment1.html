@@ -1,0 +1,63 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+<section class="w3l-inner-banner-main">
+		<div class="banner-9 sec-img">
+			<div class="wrapper">
+				<ul class="breadcrumbs-custom-path">
+					<li><a href="index.html">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+					<li><a href="#pages">Pages <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+					<li class="active">Signup</li>
+				</ul>
+			</div>0
+		</div>
+	</section>
+<section class="w3l-form-34-main">
+		<div class="form34-sub">
+			<div class="form34">
+				<h4 class="form-head">Payment</h4>
+				<p class="form-para">Freely make payments even without a wallet.</p>
+				<h3>{{plan.plan_name}}</h3>
+				<h3>Price : {{plan.price}}</h3>
+				<!-- <div class="form-34or">***</div> -->
+				<hr style="opacity: 0.60;"><br>
+				<form action="/customer/payment1_store" method="post">
+					{% csrf_token %}
+					<input type="hidden" class="input"  required id="plan_id" name="plan_id" value="{{plan.id}}" />
+					<div class="">
+						<p class="text-head">Adult Seat</p>
+						<input type="number" class="input"  required id="adult" name="adult" min="1" />
+					</div>
+					<div class="">
+						<p class="text-head">Child Seat</p>
+						<input type="number" class="input" required id="child" name="child" min="0"	/>
+					</div>
+					<!-- <div class="">
+						<p class="text-head">Departure Date</p>
+						<input type="date" class="input" required id="ddate" name="ddate"/>
+					</div>
+					<div class="">
+						<p class="text-head">To Date</p>
+						<input type="date" class="input" required id="tdate" name="tdate"/>
+					</div> -->
+					
+					<button type="submit" class="buttonbg signinbutton">Pay Now</button>
+					
+				</form>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- code of date -->
+<script type="text/javascript">
+    $(document).ready(function () {
+    var today = new Date().toISOString().split('T')[0];
+    $("#ddate").attr('min', today);
+
+    var today1 = new Date().toISOString().split('T')[0];
+    $("#tdate").attr('min', today1);
+});
+  </script>
+	{% endblock %}

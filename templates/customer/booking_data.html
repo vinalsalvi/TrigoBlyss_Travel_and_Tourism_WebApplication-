@@ -1,0 +1,81 @@
+{% extends 'customer/common/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- inner banner -->
+    <section class="w3l-inner-banner-main">
+        <div class="banner-9 sec-img">
+            <div class="wrapper">
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="/customer/homepage">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a></li>
+                    <!-- <li><a href="#pages">Booking - Details <span class="fa fa-angle-right" aria-hidden="true"></span></a></li> -->
+                    <li class="active">Booking - Details </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //covers -->
+    <section class="w3l-ecom-cart">
+        <div class="covers-main">
+            <div class="wrapper">
+                <h1 style="font-size: 35px; margin-left: -70px;">Booking - Details </h1>
+                 <div>
+                     <table cellspacing="10" cellpadding="30" style=" border: 1px solid lightgray; margin-left: -70px;box-shadow: 5px 5px 10px lightgray; border-radius: 5px; margin-bottom: 30px; ">
+                        {% if request.user.is_authenticated  %}
+                        <thead>
+
+                            <tr>
+                             <th>#</th>
+                             <th>Plan name</th>
+                             <th>User Name</th>
+                             <th>Date</th>
+                             <th>Amount</th>
+                             <th>Adult</th>
+                             <th>Child</th>
+                             <th>Departure Date</th>
+                             <th>To Date</th>
+                             <th>Payment</th>
+                             <th>Action</th>
+                         </tr>
+                            
+                        
+                         </thead>
+                         <tbody>
+                            {% for row in booking %}
+                            {% if row.status == 'completed'%}
+                             
+                                 <tr>
+                                    <td>{{row.id}}</td>
+                                    <td>{{row.plan.plan_name}}</td>
+                                    <td>{{row.user.username}}</td>
+                                    <td>{{row.booking_date}}</td>
+                                    <td>{{row.amount}}</td>
+                                    <td>{{row.adult}}</td>
+                                    <td>{{row.child}}</td>
+                                    <td>{{row.plan.ddate}}</td>
+                                    <td>{{row.plan.tdate}}</td>
+                                    <td>{{row.status}}</td>
+                                    <td>
+                                        <a href="/customer/cancel/{{row.id}}" class="actionbg" style="border: none;font-weight: 600;font-size: 17px;color: #F5F9FC;background: #2C3038;width: 200px; text-align: center;padding: 10px 20px 10px 20px;margin-left: 0px;margin-top: 0px;">Cancel</a>
+                                    </td>
+                                    
+                                 </tr>
+                            {% else %} 
+
+                                <h1>No recorde Fount</h1>
+                            {% endif %}
+
+                         {% endfor %}
+                         </tbody>
+                          {% else %}
+                                <h1>No recorde Fount</h1>    
+                         {% endif %}
+                     </table>
+                 </div>   
+            </div>
+        </div>
+     </section>
+      
+</html>
+{% endblock%}
